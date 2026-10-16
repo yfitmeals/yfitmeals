@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YFIT Meals | High-Protein Meal Prep, Singapore</title>
+<meta name="description" content="Fresh, high-protein meal prep in Singapore. Two new rotating menus every week, with free calorie and macro tracking. Order by Friday 9pm, ready Sunday 2pm.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,600;0,800;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b0c0a;
+    --ink-2: #16181a;
+    --ink-3: #23262a;
+    --paper: #f5f6f1;
+    --white: #ffffff;
+    --lime: #a8d332;
+    --lime-dk: #8cb622;
+    --text: #15171a;
+    --muted: #5d6268;
+    --muted-dk: #a3a8ae;
+    --line: #e2e4dc;
+    --radius: 16px;
+    --shadow: 0 1px 2px rgba(0,0,0,.05), 0 10px 30px rgba(0,0,0,.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--text);
+    font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 {
+    font-family: "Saira", "Inter", sans-serif; font-style: italic; font-weight: 800;
+    text-transform: uppercase; letter-spacing: -.01em; line-height: 1; margin: 0;
+  }
+  h2 { font-size: clamp(34px, 5vw, 54px); }
+  .lime { color: var(--lime); }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "Saira", sans-serif; font-weight: 700; font-style: italic;
+    font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--lime-dk);
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+  .dark .eyebrow { color: var(--lime); }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 26px; border-radius: 10px; border: 2px solid transparent;
+    font: 700 15px "Inter", sans-serif; text-decoration: none; cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s, transform .15s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-lime { background: var(--lime); color: var(--ink); }
+  .btn-lime:hover { background: #b9e143; }
+  .btn-line { border-color: rgba(255,255,255,.35); color: #fff; background: transparent; }
+  .btn-line:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+  .btn-ink { background: var(--ink); color: #fff; }
+  .btn-ink:hover { background: var(--ink-3); }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* header */
+  .head { position: sticky; top: 0; z-index: 30; background: rgba(11,12,10,.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.07); }
+  .head .wrap { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+  .brand img { width: 46px; height: 46px; border-radius: 8px; }
+  .brand b { font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 22px; letter-spacing: .01em; line-height: 1; }
+  .brand b span { color: var(--lime); }
+  .brand small { display: block; font-size: 10.5px; letter-spacing: .2em; color: var(--muted-dk); text-transform: uppercase; margin-top: 4px; }
+  .nav { display: flex; align-items: center; gap: 30px; }
+  .nav a.l { color: #d8dbdf; text-decoration: none; font-weight: 600; font-size: 14.5px; }
+  .nav a.l:hover { color: var(--lime); }
+  .nav .btn { padding: 10px 20px; }
+
+  /* hero */
+  .hero { background: var(--ink); color: #fff; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; width: 760px; height: 760px; right: -220px; top: -160px;
+    border: 2px solid rgba(255,255,255,.07); border-radius: 50%;
+  }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; padding-top: 72px; padding-bottom: 88px; }
+  .hero h1 { font-size: clamp(44px, 5.8vw, 74px); margin: 18px 0 22px; }
+  .hero h1 em { font-style: italic; color: var(--lime); }
+  .hero p.lead { color: #c9cdd2; font-size: 18px; max-width: 520px; margin: 0 0 32px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .deadline {
+    margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; max-width: 520px;
+    border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); overflow: hidden;
+  }
+  .deadline div { padding: 16px 20px; }
+  .deadline div + div { border-left: 1px solid rgba(255,255,255,.12); }
+  .deadline span { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-dk); }
+  .deadline b { font-family: "Saira", sans-serif; font-style: italic; font-weight: 800; font-size: 22px; text-transform: uppercase; }
+  .deadline small { display: block; color: var(--lime); font-weight: 600; font-size: 13px; margin-top: 2px; }
+
+  .hero-pic { position: relative; }
+  .hero-pic .main { border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 4.6; box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  .hero-pic .main img { width: 100%; height: 100%; object-fit: cover; }
+  .macro-chip {
+    position: absolute; background: #fff; color: var(--text); border-radius: 14px; padding: 14px 18px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.35); font-size: 13px;
+  }
+  .macro-chip.one { left: -28px; bottom: 34px; }
+  .macro-chip.two { right: -18px; top: 30px; background: var(--lime); }
+  .macro-chip b { display: block; font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 30px; line-height: 1; }
+  .macro-chip span { color: var(--muted); font-weight: 600; }
+  .macro-chip.two span { color: var(--ink); }
+
+  /* value strip */
+  .strip { background: var(--lime); color: var(--ink); }
+  .strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .strip div { padding: 22px 18px; display: flex; gap: 14px; align-items: center; }
+  .strip div + div { border-left: 1px solid rgba(0,0,0,.14); }
+  .strip svg { width: 30px; height: 30px; flex: none; }
+  .strip b { display: block; font-size: 15px; line-height: 1.25; }
+  .strip span { font-size: 13px; opacity: .75; }
+
+  section { padding: 104px 0; }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 44px; }
+  .sec-head h2 { margin-top: 12px; }
+  .sec-head p { max-width: 430px; color: var(--muted); margin: 0; }
+
+  /* menu */
+  .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .meal { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  .meal .ph { position: relative; aspect-ratio: 16 / 11; overflow: hidden; }
+  .meal .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .meal:hover .ph img { transform: scale(1.04); }
+  .meal .tag {
+    position: absolute; top: 16px; left: 16px; background: var(--ink); color: #fff;
+    font-family: "Saira", sans-serif; font-style: italic; font-weight: 800; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 8px; font-size: 15px; letter-spacing: .04em;
+  }
+  .meal .tag i { color: var(--lime); font-style: italic; }
+  .meal .price-tag {
+    position: absolute; top: 16px; right: 16px; background: var(--lime); color: var(--ink);
+    font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 24px;
+    padding: 4px 14px; border-radius: 8px;
+  }
+  .meal .body { padding: 26px 28px 28px; }
+  .meal h3 { font-size: 30px; }
+  .meal .kcal { margin: 10px 0 22px; color: var(--muted); font-size: 15px; }
+  .meal .kcal b { color: var(--text); font-size: 18px; }
+  .macros { display: grid; gap: 12px; }
+  .mrow { display: grid; grid-template-columns: 70px 1fr 56px; align-items: center; gap: 12px; font-size: 14px; }
+  .mrow span:first-child { font-weight: 600; color: var(--muted); }
+  .mrow .bar { height: 8px; background: #eceee7; border-radius: 99px; overflow: hidden; }
+  .mrow .bar i { display: block; height: 100%; border-radius: 99px; background: var(--ink); }
+  .mrow.p .bar i { background: var(--lime-dk); }
+  .mrow.f .bar i { background: #9aa0a6; }
+  .mrow b { text-align: right; font-weight: 700; }
+  .menu-note { margin-top: 26px; color: var(--muted); font-size: 14px; text-align: center; }
+
+  /* builder */
+  .build { background: var(--ink); color: #fff; }
+  .build .sec-head p { color: var(--muted-dk); }
+  .builder { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+  .b-items { display: grid; gap: 16px; }
+  .b-item { background: var(--ink-2); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 22px 24px; display: grid; grid-template-columns: 76px 1fr auto; gap: 18px; align-items: center; }
+  .b-item img { width: 76px; height: 76px; object-fit: cover; border-radius: 12px; }
+  .b-item h3 { font-size: 22px; }
+  .b-item p { margin: 4px 0 0; color: var(--muted-dk); font-size: 14px; }
+  .b-item .addon { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; margin-top: 12px; font-size: 13.5px; color: #dfe2e5; }
+  .b-item .addon small { color: var(--muted-dk); }
+  .stepper.sm button { width: 30px; height: 30px; font-size: 16px; }
+  .stepper.sm output { min-width: 20px; font-size: 14px; }
+  .fs-title { display: flex; align-items: center; gap: 12px; margin-top: 18px; font-family: "Saira", sans-serif; font-style: italic; font-weight: 800; font-size: 20px; text-transform: uppercase; }
+  .fs-title:first-child { margin-top: 0; }
+  .fs-title span { width: 30px; height: 30px; border-radius: 8px; background: var(--lime); color: var(--ink); display: grid; place-items: center; font-size: 16px; font-weight: 900; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: block; font-size: 14px; font-weight: 600; color: #dfe2e5; }
+  .field input, .field textarea { display: block; margin-top: 7px; }
+  .field .err { display: block; margin-top: 6px; }
+  .field .err[hidden] { display: none; }
+  .field.full { grid-column: 1 / -1; }
+  .field[hidden] { display: none; }
+  .field .opt { color: var(--muted-dk); font-weight: 400; }
+  .field input, .field textarea {
+    width: 100%; background: var(--ink-2); border: 1px solid rgba(255,255,255,.14); border-radius: 10px;
+    color: #fff; font: 400 16px "Inter", sans-serif; padding: 13px 14px; resize: vertical;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: #6c7178; }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 3px rgba(168,211,50,.2); }
+  .field.bad input, .field.bad textarea { border-color: #ff6b5b; }
+  .err { color: #ff8a7d; font-size: 13.5px; font-style: normal; font-weight: 500; margin: 0; }
+  .summary .err { color: #c62f1e; margin-top: 12px; }
+  .paynow { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; background: var(--ink-2); border: 1px solid rgba(168,211,50,.35); border-radius: var(--radius); padding: 20px 22px; }
+  .paynow .pn-label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-dk); }
+  .paynow b { display: block; font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 34px; line-height: 1.1; color: var(--lime); }
+  .paynow p { margin: 2px 0 0; color: #dfe2e5; font-size: 14.5px; }
+  .paynow strong { color: #fff; }
+  .paynow .btn { padding: 10px 16px; font-size: 14px; }
+  .drop { display: flex; align-items: center; gap: 16px; border: 2px dashed rgba(255,255,255,.2); border-radius: var(--radius); padding: 20px 22px; cursor: pointer; color: var(--muted-dk); font-size: 14px; transition: border-color .15s, background .15s; }
+  .drop:hover, .drop:focus-within { border-color: var(--lime); background: rgba(168,211,50,.05); }
+  .drop.bad { border-color: #ff6b5b; }
+  .drop[hidden] { display: none; }
+  .shot-note { margin: 0; color: var(--muted-dk); font-size: 14px; }
+  .drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .drop b { color: #fff; }
+  .drop img { width: 64px; height: 64px; object-fit: cover; border-radius: 10px; flex: none; }
+  .summary button.btn { border: 0; }
+  .summary button.btn:disabled { opacity: .6; cursor: wait; }
+  .done { max-width: 620px; margin: 0 auto; background: #fff; color: var(--text); border-radius: 22px; padding: 44px 36px; text-align: center; }
+  .done[hidden] { display: none; }
+  .done .tick { width: 64px; height: 64px; border-radius: 50%; background: var(--lime); color: var(--ink); display: grid; place-items: center; margin: 0 auto 20px; }
+  .done .tick svg { width: 32px; height: 32px; }
+  .done .ref { color: var(--muted); margin: 10px 0 22px; }
+  .done .ref b { color: var(--text); font-family: "Saira", sans-serif; font-style: italic; font-size: 20px; }
+  .done .lines { text-align: left; background: var(--paper); border-radius: 12px; padding: 18px; }
+  .done p#doneMsg { color: var(--muted); margin: 22px 0 26px; }
+  .builder[hidden] { display: none; }
+  .stepper { display: inline-flex; align-items: center; background: var(--ink-3); border-radius: 10px; }
+  .stepper button { width: 40px; height: 40px; border: 0; background: none; color: #fff; font-size: 20px; cursor: pointer; border-radius: 10px; }
+  .stepper button:hover { background: rgba(255,255,255,.08); }
+  .stepper button:disabled { opacity: .3; cursor: default; background: none; }
+  .stepper output { min-width: 26px; text-align: center; font-weight: 700; font-size: 17px; }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--ink-2); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 6px; gap: 6px; }
+  .seg button { border: 0; background: none; color: #cfd3d7; font: 600 14.5px "Inter", sans-serif; padding: 14px 10px; border-radius: 10px; cursor: pointer; }
+  .seg button.on { background: var(--lime); color: var(--ink); }
+  .summary { background: #fff; color: var(--text); border-radius: 20px; padding: 28px; position: sticky; top: 96px; }
+  .summary h3 { font-size: 24px; margin-bottom: 18px; }
+  .lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 15px; min-height: 30px; }
+  .lines li { display: flex; justify-content: space-between; gap: 12px; }
+  .lines li.empty { color: var(--muted); }
+  .total { display: flex; justify-content: space-between; align-items: baseline; border-top: 2px dashed var(--line); margin-top: 18px; padding-top: 18px; }
+  .total span { font-weight: 600; }
+  .total b { font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 40px; line-height: 1; }
+  .summary .btn { width: 100%; margin-top: 20px; }
+  .summary .fine { font-size: 12.5px; color: var(--muted); margin: 14px 0 0; }
+
+  /* steps */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+  .step { background: var(--white); border-radius: var(--radius); padding: 30px 24px; box-shadow: var(--shadow); position: relative; counter-increment: s; }
+  .step::before {
+    content: counter(s, decimal-leading-zero); font-family: "Saira", sans-serif; font-style: italic; font-weight: 900;
+    font-size: 46px; line-height: 1; color: var(--lime-dk); display: block; margin-bottom: 18px;
+  }
+  .step h3 { font-size: 21px; margin-bottom: 8px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+  .step .when { display: inline-block; margin-top: 14px; font-size: 12.5px; font-weight: 700; background: var(--ink); color: var(--lime); padding: 4px 10px; border-radius: 6px; }
+
+  /* gallery */
+  .gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 16px; }
+  .gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; position: relative; }
+  .gallery figure:first-child { grid-row: span 2; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery figcaption {
+    position: absolute; left: 12px; bottom: 12px; background: rgba(11,12,10,.82); color: #fff;
+    font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 8px;
+  }
+
+  /* about */
+  .about { background: var(--white); }
+  .about .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 72px; align-items: center; }
+  .about .logo-box { background: var(--ink); border-radius: 24px; padding: 40px; aspect-ratio: 1; display: grid; place-items: center; }
+  .about .logo-box img { width: 100%; max-width: 440px; }
+  .about p { color: var(--muted); font-size: 17px; }
+  .sign { margin-top: 26px; display: flex; align-items: center; gap: 14px; }
+  .sign i { width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: var(--lime); display: grid; place-items: center; font-family: "Saira", sans-serif; font-weight: 900; font-size: 18px; }
+  .sign b { display: block; }
+  .sign span { color: var(--muted); font-size: 14px; }
+
+  /* care + faq */
+  .care { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 72px; }
+  .care div { background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+  .care svg { width: 34px; height: 34px; color: var(--lime-dk); margin-bottom: 14px; }
+  .care h3 { font-size: 20px; margin-bottom: 8px; }
+  .care p { margin: 0; color: var(--muted); font-size: 15px; }
+  .faq { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; }
+  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  details:first-child { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-weight: 700; font-size: 17px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 24px; line-height: 1; color: var(--lime-dk); font-weight: 600; }
+  details[open] summary::after { content: "\2013"; }
+  details p { margin: 10px 0 0; color: var(--muted); }
+
+  /* cta */
+  .cta { padding: 0 0 104px; }
+  .cta .box {
+    background: var(--ink); color: #fff; border-radius: 26px; padding: 60px; position: relative; overflow: hidden;
+    display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap;
+  }
+  .cta .box::after { content: ""; position: absolute; right: -120px; bottom: -200px; width: 460px; height: 460px; border-radius: 50%; border: 2px solid rgba(168,211,50,.35); }
+  .cta h2 { max-width: 600px; position: relative; z-index: 1; }
+  .cta p { margin: 12px 0 0; color: #c9cdd2; position: relative; z-index: 1; }
+  .cta .ctas { display: flex; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+
+  footer { background: var(--ink); color: var(--muted-dk); padding: 60px 0 32px; font-size: 14px; }
+  footer .top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  footer .tagline { margin: 14px 0 0; max-width: 300px; }
+  footer .cols { display: flex; gap: 64px; flex-wrap: wrap; }
+  footer h4 { color: #fff; margin: 0 0 14px; font-size: 14px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--lime); }
+  footer .bottom { padding-top: 24px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: #73787e; }
+
+  /* mobile order bar */
+  .mbar { display: none; }
+
+  @media (max-width: 980px) {
+    .hero .wrap, .builder, .about .wrap, .faq { grid-template-columns: 1fr; gap: 44px; }
+    .hero-pic { max-width: 520px; }
+    .strip .wrap { grid-template-columns: 1fr 1fr; }
+    .strip div:nth-child(3) { border-left: 0; }
+    .strip div:nth-child(n+3) { border-top: 1px solid rgba(0,0,0,.14); }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .care { grid-template-columns: 1fr; }
+    .summary { position: static; }
+    .about .logo-box { max-width: 420px; }
+  }
+  @media (max-width: 700px) {
+    .wrap { padding: 0 16px; }
+    .nav a.l { display: none; }
+    .head .wrap { height: 64px; }
+    .brand img { width: 40px; height: 40px; }
+    .brand small { display: none; }
+    .brand b { white-space: nowrap; font-size: 20px; }
+    .nav .btn { padding: 9px 16px; font-size: 14px; white-space: nowrap; }
+    section { padding: 72px 0; }
+    .hero .wrap { padding-top: 44px; padding-bottom: 64px; }
+    .hero p.lead { font-size: 16.5px; }
+    .deadline b { font-size: 18px; }
+    .deadline div { padding: 14px 14px; }
+    .macro-chip.one { left: 10px; bottom: 14px; }
+    .macro-chip.two { right: 10px; top: 14px; }
+    .macro-chip b { font-size: 24px; }
+    .strip div { padding: 16px 10px; gap: 10px; }
+    .strip div:nth-child(odd) { padding-left: 0; }
+    .strip svg { width: 24px; height: 24px; }
+    .menu-grid, .steps { grid-template-columns: 1fr; }
+    .meal .body { padding: 22px 20px 24px; }
+    .meal h3 { font-size: 26px; }
+    .b-item { grid-template-columns: 60px 1fr; padding: 18px; gap: 14px; }
+    .b-item img { width: 60px; height: 60px; }
+    .b-item > .stepper { grid-column: 1 / -1; justify-self: start; }
+    .fields { grid-template-columns: 1fr; }
+    .paynow .btn { width: 100%; }
+    .done { padding: 36px 20px; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 170px 170px; }
+    .gallery figure:first-child { grid-row: auto; grid-column: span 2; }
+    .gallery figure:last-child { grid-column: span 2; }
+    .cta .box { padding: 40px 24px; }
+    .about .logo-box { padding: 24px; }
+    .mbar {
+      display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40;
+      background: var(--ink); color: #fff; border-radius: 14px; padding: 10px 10px 10px 18px;
+      align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      transform: translateY(140%); transition: transform .25s ease;
+    }
+    .mbar.show { transform: none; }
+    .mbar span { font-size: 13px; color: var(--muted-dk); }
+    .mbar b { display: block; color: #fff; font-size: 15px; }
+    .mbar .btn { padding: 11px 16px; font-size: 14px; }
+    footer { padding-bottom: 96px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="images/logo.png" alt="YFIT Meals logo">
+      <span><b>YFIT <span>MEALS</span></b><small>Fuel. Prepare. Perform.</small></span>
+    </a>
+    <nav class="nav">
+      <a class="l" href="#menu">This Week</a>
+      <a class="l" href="#order">Order</a>
+      <a class="l" href="#how">How It Works</a>
+      <a class="l" href="#faq">FAQ</a>
+      <a class="btn btn-lime js-order" href="#order">Order Now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero dark" style="padding:0">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">High-protein meal prep &middot; Singapore</span>
+        <h1>Eat clean.<br><em>Train hard.</em><br>Skip the cooking.</h1>
+        <p class="lead">Fresh, high-protein meals built around your fitness goals and your busy week. Two new rotating menus every week, with the calories and macros worked out to the gram.</p>
+        <div class="ctas">
+          <a class="btn btn-lime js-order" href="#order">
+            Order this week&rsquo;s meals
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-line" href="#menu">See the menu</a>
+        </div>
+        <div class="deadline">
+          <div><span>Orders close</span><b>Friday, 9pm</b><small id="countdown">&nbsp;</small></div>
+          <div><span>Meals ready</span><b>Sunday, 2pm</b><small>Delivery or self-collection</small></div>
+        </div>
+      </div>
+      <div class="hero-pic">
+        <div class="main"><img src="images/steak-kimchi-rice.jpg" alt="Seared beef steak sliced over kimchi fried rice in meal prep containers"></div>
+        <div class="macro-chip two"><b>46.7g</b><span>protein per meal</span></div>
+        <div class="macro-chip one"><b>575</b><span>kcal &middot; tracked to the gram</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>
+        <span><b>40g+ protein</b>in every main meal</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span><b>Free macro tracking</b>calories to the gram</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg>
+        <span><b>2 new menus</b>rotating every week</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+        <span><b>Delivered or collect</b>every Sunday, 2pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">This week&rsquo;s menu</span>
+          <h2>Two meals. <span style="color:var(--lime-dk)">Fully dialled in.</span></h2>
+        </div>
+        <p>Each meal is portioned and weighed, so you know exactly what you&rsquo;re eating. Add extra meat and rice to any meal for $2.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="meal">
+          <div class="ph">
+            <img src="images/chicken-rice.jpg" alt="Glazed grilled chicken thigh with white rice and long beans">
+            <span class="tag">Menu <i>A</i></span>
+            <span class="price-tag">$8</span>
+          </div>
+          <div class="body">
+            <h3>Gochujang Chicken with Rice</h3>
+            <div class="kcal"><b>523</b> kcal per meal</div>
+            <div class="macros">
+              <div class="mrow p"><span>Protein</span><div class="bar"><i style="width:63%"></i></div><b>43.9g</b></div>
+              <div class="mrow"><span>Carbs</span><div class="bar"><i style="width:89%"></i></div><b>62g</b></div>
+              <div class="mrow f"><span>Fats</span><div class="bar"><i style="width:12%"></i></div><b>8.6g</b></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="meal">
+          <div class="ph">
+            <img src="images/steak-kimchi-rice.jpg" alt="Sliced seared beef steak over kimchi fried rice">
+            <span class="tag">Menu <i>B</i></span>
+            <span class="price-tag">$13</span>
+          </div>
+          <div class="body">
+            <h3>Beef Steak Stir Fry with Rice</h3>
+            <div class="kcal"><b>575</b> kcal per meal</div>
+            <div class="macros">
+              <div class="mrow p"><span>Protein</span><div class="bar"><i style="width:67%"></i></div><b>46.7g</b></div>
+              <div class="mrow"><span>Carbs</span><div class="bar"><i style="width:83%"></i></div><b>58.4g</b></div>
+              <div class="mrow f"><span>Fats</span><div class="bar"><i style="width:21%"></i></div><b>14.9g</b></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="menu-note">Menus change every week. Follow along so you don&rsquo;t miss your favourites.</p>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="build dark" id="order">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Order now</span>
+          <h2>Place your order</h2>
+        </div>
+        <p>Choose your meals, fill in your details and pay by PayNow. It takes about a minute. Orders close Friday, 9pm.</p>
+      </div>
+
+      <form class="builder" id="orderForm" novalidate>
+        <div class="b-items">
+          <div class="fs-title"><span>1</span>Choose your meals</div>
+          <div class="b-item" data-key="A">
+            <img src="images/chicken-rice.jpg" alt="">
+            <div>
+              <h3>Menu A &middot; Gochujang Chicken</h3>
+              <p>$8 per meal &middot; 523 kcal &middot; 43.9g protein</p>
+              <div class="addon">Extra meat &amp; rice <small>+$2 / meal</small>
+                <span class="stepper sm" data-addon><button type="button" aria-label="Remove a Menu A add-on">&minus;</button><output>0</output><button type="button" aria-label="Add a Menu A add-on">+</button></span>
+              </div>
+            </div>
+            <div class="stepper" data-meals><button type="button" aria-label="Remove a Menu A meal">&minus;</button><output>0</output><button type="button" aria-label="Add a Menu A meal">+</button></div>
+          </div>
+          <div class="b-item" data-key="B">
+            <img src="images/steak-kimchi-rice.jpg" alt="">
+            <div>
+              <h3>Menu B &middot; Beef Steak Stir Fry</h3>
+              <p>$13 per meal &middot; 575 kcal &middot; 46.7g protein</p>
+              <div class="addon">Extra meat &amp; rice <small>+$2 / meal</small>
+                <span class="stepper sm" data-addon><button type="button" aria-label="Remove a Menu B add-on">&minus;</button><output>0</output><button type="button" aria-label="Add a Menu B add-on">+</button></span>
+              </div>
+            </div>
+            <div class="stepper" data-meals><button type="button" aria-label="Remove a Menu B meal">&minus;</button><output>0</output><button type="button" aria-label="Add a Menu B meal">+</button></div>
+          </div>
+          <p class="err" id="err-meals" hidden>Please add at least one meal.</p>
+
+          <div class="fs-title"><span>2</span>Your details</div>
+          <div class="fields">
+            <label class="field full">Full name *<input name="name" autocomplete="name" required><em class="err" hidden>Please enter your name.</em></label>
+            <label class="field">Phone number *<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 9123 4567" required><em class="err" hidden>Please enter a valid phone number.</em></label>
+            <label class="field">Email <span class="opt">(optional)</span><input name="email" type="email" autocomplete="email"><em class="err" hidden>Please check your email address.</em></label>
+          </div>
+
+          <div class="fs-title"><span>3</span>Delivery or collection</div>
+          <div class="seg" role="radiogroup" aria-label="Delivery or self-collection">
+            <button type="button" class="on" data-del="0" role="radio" aria-checked="true">Self-collection &middot; Free</button>
+            <button type="button" data-del="15" role="radio" aria-checked="false">Delivery &middot; $15</button>
+          </div>
+          <div class="fields">
+            <label class="field full" id="addrField" hidden>Delivery address *<textarea name="address" rows="2" autocomplete="street-address" placeholder="Block, street, unit number, postal code"></textarea><em class="err" hidden>Please enter your delivery address.</em></label>
+            <label class="field full">Notes <span class="opt">(optional)</span><textarea name="notes" rows="2" placeholder="Allergies, special requests, collection timing"></textarea></label>
+          </div>
+
+          <div class="fs-title"><span>4</span>Payment</div>
+          <div class="paynow">
+            <div>
+              <span class="pn-label">PayNow</span>
+              <b id="payAmt">$0</b>
+              <p>to <strong>+65 9818 8807</strong> &middot; remarks <strong>YF Prep</strong></p>
+            </div>
+            <button type="button" class="btn btn-line" id="copyNum">Copy number</button>
+          </div>
+          <label class="drop" id="drop">
+            <input type="file" name="screenshot" accept="image/*" id="shot">
+            <img id="shotPreview" alt="" hidden>
+            <span id="shotText"><b>Upload payment screenshot *</b><br>Tap to choose an image of your PayNow confirmation</span>
+          </label>
+          <p class="err" id="err-shot" hidden>Please upload your payment screenshot.</p>
+        </div>
+
+        <aside class="summary">
+          <h3>Your order</h3>
+          <ul class="lines" id="lines"><li class="empty">Add a meal to get started.</li></ul>
+          <div class="total"><span>Total</span><b id="total">$0</b></div>
+          <button type="submit" class="btn btn-ink" id="submitBtn">Place order</button>
+          <p class="err" id="err-submit" hidden></p>
+          <p class="fine">Your order is confirmed once we receive your payment. Up to 4 meals of each menu per order. Meals are ready Sunday, 2pm.</p>
+        </aside>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h2>Order received!</h2>
+        <p class="ref">Order <b id="doneId"></b></p>
+        <ul class="lines" id="doneLines"></ul>
+        <p id="doneMsg">Thank you for supporting YFIT Meals. We&rsquo;ll confirm your order once we&rsquo;ve checked your payment, and update you on WhatsApp when your meals are on the way.</p>
+        <button type="button" class="btn btn-lime" id="newOrder">Place another order</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">How it works</span>
+          <h2>Order Friday. Eat well all week.</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Pick your meals</h3>
+          <p>Order right here on our website. Choose from this week&rsquo;s two menus and add extra meat and rice if you need it.</p>
+          <span class="when">Before Fri, 9pm</span>
+        </div>
+        <div class="step">
+          <h3>Pay via PayNow</h3>
+          <p>PayNow to +65 9818 8807 with the remark &ldquo;YF Prep&rdquo;, then upload your screenshot when you check out.</p>
+          <span class="when">Confirms your order</span>
+        </div>
+        <div class="step">
+          <h3>We prep &amp; pack</h3>
+          <p>Every meal is freshly cooked, portioned and weighed, with its calories and macros calculated.</p>
+          <span class="when">Weekend</span>
+        </div>
+        <div class="step">
+          <h3>Collect or receive</h3>
+          <p>Self-collect or get it delivered. We&rsquo;ll WhatsApp you when your meals are on the way.</p>
+          <span class="when">Sunday, 2pm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">From our kitchen</span>
+          <h2>Real food. Real portions.</h2>
+        </div>
+        <p>A look at what comes out of the YFIT kitchen each week. No filters, just honest meals.</p>
+      </div>
+      <div class="gallery">
+        <figure><img src="images/chicken-rice.jpg" alt="Meal prep boxes of glazed chicken, rice and vegetables"><figcaption>Gochujang chicken &amp; rice</figcaption></figure>
+        <figure><img src="images/pancake-stack.jpg" alt="Stack of fluffy pancakes"><figcaption>Pancake stack</figcaption></figure>
+        <figure><img src="images/steak-kimchi-rice.jpg" alt="Beef steak with kimchi fried rice"><figcaption>Steak &amp; kimchi rice</figcaption></figure>
+        <figure><img src="images/pancakes.jpg" alt="Plate of golden pancakes"><figcaption>Fresh pancakes</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="logo-box"><img src="images/logo.png" alt="YFIT Meals: Fuel. Prepare. Perform."></div>
+      <div>
+        <span class="eyebrow">Our story</span>
+        <h2 style="margin-top:12px">Meal prep made for people who train.</h2>
+        <p style="margin-top:22px">YFIT Meals is a home-based kitchen in Singapore. We cook fresh, high-protein meals for people who want to hit their goals without spending their Sunday at the stove.</p>
+        <p>Every week brings two new menus, so you get variety and balanced nutrition without getting bored. Clean ingredients, honest portions, and the numbers to back them up.</p>
+        <div class="sign">
+          <i>YS</i>
+          <div><b>Yusuf Samsudin</b><span>Founder, YFIT Meals</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARE + FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="care">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M5 10h14M9 6v1.5M9 13.5v3"/></svg>
+          <h3>Eating this week?</h3>
+          <p>Put your meals in the fridge as soon as you receive or collect them.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg>
+          <h3>Saving for later?</h3>
+          <p>Freeze them for up to 3 weeks to keep them fresh and tasting their best.</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M6 9h9v6H6zM18.5 9v.01M18.5 12v.01"/></svg>
+          <h3>Ready to eat?</h3>
+          <p>Microwave for 2&ndash;3 minutes. That keeps the texture and flavour right.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div>
+          <span class="eyebrow">FAQ</span>
+          <h2 style="margin-top:12px">Good to know</h2>
+        </div>
+        <div>
+          <details open>
+            <summary>When do I need to order by?</summary>
+            <p>Orders close every Friday at 9pm. Meals are ready for delivery or self-collection that Sunday at 2pm.</p>
+          </details>
+          <details>
+            <summary>How much does it cost?</summary>
+            <p>Menu A is $8 per meal. Menu B is $13 per meal, or $51 for 4 meals. Extra meat and rice is $2 per meal, and delivery is a flat $15. Self-collection is free.</p>
+          </details>
+          <details>
+            <summary>What is the free macro tracking?</summary>
+            <p>Every purchase comes with the calories, protein, carbs and fats for your meals, calculated to the gram. Easy to log, easy to stay on track.</p>
+          </details>
+          <details>
+            <summary>How do I pay?</summary>
+            <p>PayNow or QR to +65 9818 8807 with the remark &ldquo;YF Prep&rdquo;, then upload your payment screenshot when you place your order. Your order is confirmed once we receive payment.</p>
+          </details>
+          <details>
+            <summary>Does the menu change?</summary>
+            <p>Yes. There are two new rotating menus every week, so you get variety without having to think about it.</p>
+          </details>
+          <details>
+            <summary>How will I know my delivery is on the way?</summary>
+            <p>We&rsquo;ll update you on WhatsApp once your meals are out for delivery.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="wrap">
+      <div class="box dark">
+        <div>
+          <span class="eyebrow">Fuel. Prepare. Perform.</span>
+          <h2 style="margin-top:12px">Your week of meals, sorted.</h2>
+          <p>Orders close Friday, 9pm. Get yours in before this week&rsquo;s slots run out.</p>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-lime js-order" href="#order">Order now</a>
+          <a class="btn btn-line" href="https://wa.me/6598188807" target="_blank" rel="noopener">WhatsApp us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="brand" href="#top">
+          <img src="images/logo.png" alt="">
+          <span><b>YFIT <span>MEALS</span></b><small>Fuel. Prepare. Perform.</small></span>
+        </a>
+        <p class="tagline">Fresh, high-protein meal prep from our home kitchen in Singapore.</p>
+      </div>
+      <div class="cols">
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#menu">This week&rsquo;s menu</a></li>
+            <li><a href="#order">Order &amp; pricing</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Order</h4>
+          <ul>
+            <li><a class="js-order" href="#order">Place an order</a></li>
+            <li><a href="https://wa.me/6598188807" target="_blank" rel="noopener">WhatsApp +65 9818 8807</a></li>
+            <li>Orders close Fri, 9pm</li>
+            <li>Ready Sun, 2pm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>&copy; <span id="yr">2026</span> YFIT Meals. All rights reserved.</span>
+      <span>Made fresh in Singapore</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <div><span id="mcount">0 meals</span><b id="mtotal">$0</b></div>
+  <a class="btn btn-lime" href="#" id="mbarGo">Checkout</a>
+</div>
+
+<script>
+  // Paste the Google Apps Script web app URL here (see SETUP-ORDERS.md).
+  // While it is empty, orders are sent to WhatsApp instead.
+  var ORDERS_URL = '';
+  var WHATSAPP = '6598188807';
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Prices match the old Google Form (Menu B has a 4-meal bundle price)
+  var MENU = {
+    A: { name: 'Menu A · Gochujang Chicken', prices: [0, 8, 16, 24, 32] },
+    B: { name: 'Menu B · Beef Steak Stir Fry', prices: [0, 13, 26, 39, 51] }
+  };
+  var ADDON = 2, MAX = 4, DELIVERY = 15;
+  var state = { A: { q: 0, add: 0 }, B: { q: 0, add: 0 }, del: 0, shot: null };
+  var form = document.getElementById('orderForm');
+
+  // WhatsApp mode: the screenshot is sent in the chat, so don't ask for it here
+  if (!ORDERS_URL) {
+    document.getElementById('drop').hidden = true;
+    document.getElementById('err-shot').insertAdjacentHTML('afterend',
+      '<p class="shot-note">After you place your order, WhatsApp will open with your order filled in. Attach your PayNow screenshot there.</p>');
+  }
+
+  function money(n) { return '$' + (n % 1 ? n.toFixed(2) : n); }
+
+  function orderLines() {
+    var lines = [], total = 0, meals = 0;
+    ['A', 'B'].forEach(function (k) {
+      var s = state[k];
+      if (!s.q) return;
+      meals += s.q;
+      lines.push([s.q + ' × ' + MENU[k].name, MENU[k].prices[s.q]]);
+      total += MENU[k].prices[s.q];
+      if (s.add) { lines.push(['Extra meat & rice × ' + s.add + ' (Menu ' + k + ')', ADDON * s.add]); total += ADDON * s.add; }
+    });
+    if (meals) {
+      lines.push([state.del ? 'Delivery' : 'Self-collection', state.del]);
+      total += state.del;
+    }
+    return { lines: lines, total: total, meals: meals };
+  }
+
+  function fillLines(ul, lines) {
+    ul.innerHTML = '';
+    lines.forEach(function (l) {
+      var li = document.createElement('li');
+      var a = document.createElement('span'); a.textContent = l[0];
+      var b = document.createElement('b'); b.textContent = l[1] ? money(l[1]) : 'Free';
+      li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+    });
+  }
+
+  function render() {
+    var o = orderLines(), ul = document.getElementById('lines');
+    if (o.lines.length) fillLines(ul, o.lines);
+    else ul.innerHTML = '<li class="empty">Add a meal to get started.</li>';
+    if (o.meals) document.getElementById('err-meals').hidden = true;
+    ['total', 'mtotal', 'payAmt'].forEach(function (id) { document.getElementById(id).textContent = money(o.total); });
+    document.getElementById('mcount').textContent = o.meals + (o.meals === 1 ? ' meal' : ' meals');
+    document.getElementById('mbar').classList.toggle('show', o.meals > 0 && !form.hidden);
+  }
+
+  function stepper(el, get, set, max) {
+    var btns = el.querySelectorAll('button'), out = el.querySelector('output');
+    function sync() {
+      var v = get(), m = max();
+      out.textContent = v;
+      btns[0].disabled = v === 0;
+      btns[1].disabled = v >= m;
+    }
+    btns[0].addEventListener('click', function () { set(Math.max(0, get() - 1)); });
+    btns[1].addEventListener('click', function () { set(Math.min(max(), get() + 1)); });
+    return sync;
+  }
+
+  var syncs = [];
+  document.querySelectorAll('.b-item').forEach(function (row) {
+    var s = state[row.dataset.key];
+    function refresh() { s.add = Math.min(s.add, s.q); syncs.forEach(function (f) { f(); }); render(); }
+    syncs.push(stepper(row.querySelector('[data-meals]'),
+      function () { return s.q; }, function (v) { s.q = v; refresh(); }, function () { return MAX; }));
+    // Add-ons can't exceed the number of meals of that menu
+    syncs.push(stepper(row.querySelector('[data-addon]'),
+      function () { return s.add; }, function (v) { s.add = v; refresh(); }, function () { return s.q; }));
+  });
+  syncs.forEach(function (f) { f(); });
+
+  var addrField = document.getElementById('addrField');
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.seg button').forEach(function (x) {
+        x.classList.toggle('on', x === b); x.setAttribute('aria-checked', x === b);
+      });
+      state.del = +b.dataset.del;
+      addrField.hidden = !state.del;
+      render();
+    });
+  });
+
+  document.getElementById('copyNum').addEventListener('click', function (e) {
+    var btn = e.currentTarget;
+    function done() { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy number'; }, 1800); }
+    if (navigator.clipboard) navigator.clipboard.writeText('98188807').then(done, function () {});
+  });
+
+  // Shrink the screenshot in the browser so uploads stay small and fast
+  document.getElementById('shot').addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      var img = new Image();
+      img.onload = function () {
+        var scale = Math.min(1, 1400 / Math.max(img.width, img.height));
+        var c = document.createElement('canvas');
+        c.width = Math.round(img.width * scale); c.height = Math.round(img.height * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        var url = c.toDataURL('image/jpeg', 0.82);
+        state.shot = url.split(',')[1];
+        var prev = document.getElementById('shotPreview');
+        prev.src = url; prev.hidden = false;
+        document.getElementById('shotText').innerHTML = '<b>Screenshot added</b><br>' + file.name.replace(/[<>&]/g, '') + ' &middot; tap to change';
+        document.getElementById('drop').classList.remove('bad');
+        document.getElementById('err-shot').hidden = true;
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  function setErr(name, bad) {
+    var f = form.elements[name].closest('.field');
+    f.classList.toggle('bad', bad);
+    f.querySelector('.err').hidden = !bad;
+    return bad;
+  }
+
+  function validate() {
+    var el = form.elements, first = null;
+    function check(bad, target) { if (bad && !first) first = target; return bad; }
+    check(!orderLines().meals, document.querySelectorAll('.b-item')[0]) && (document.getElementById('err-meals').hidden = false);
+    check(setErr('name', !el.name.value.trim()), el.name);
+    check(setErr('phone', el.phone.value.replace(/\D/g, '').length < 8), el.phone);
+    check(setErr('email', !!el.email.value.trim() && !/^\S+@\S+\.\S+$/.test(el.email.value.trim())), el.email);
+    check(setErr('address', !!state.del && !el.address.value.trim()), el.address);
+    if (check(ORDERS_URL && !state.shot, document.getElementById('drop'))) {
+      document.getElementById('drop').classList.add('bad');
+      document.getElementById('err-shot').hidden = false;
+    }
+    if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); if (first.focus) first.focus({ preventScroll: true }); }
+    return !first;
+  }
+
+  ['name', 'phone', 'email', 'address'].forEach(function (n) {
+    form.elements[n].addEventListener('input', function () { setErr(n, false); });
+  });
+
+  function orderId() {
+    var d = new Date(), chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = '';
+    for (var i = 0; i < 4; i++) s += chars[Math.floor(Math.random() * chars.length)];
+    return 'YF' + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0') + '-' + s;
+  }
+
+  function showDone(id, o, msg) {
+    document.getElementById('doneId').textContent = id;
+    fillLines(document.getElementById('doneLines'), o.lines.concat([['Total', o.total]]));
+    if (msg) document.getElementById('doneMsg').textContent = msg;
+    form.hidden = true;
+    document.getElementById('done').hidden = false;
+    document.getElementById('mbar').classList.remove('show');
+    document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var errBox = document.getElementById('err-submit');
+    errBox.hidden = true;
+    if (!validate()) return;
+
+    var el = form.elements, o = orderLines(), id = orderId();
+    var data = {
+      orderId: id,
+      name: el.name.value.trim(), phone: el.phone.value.trim(), email: el.email.value.trim(),
+      menuA: state.A.q, addonA: state.A.add, menuB: state.B.q, addonB: state.B.add,
+      fulfilment: state.del ? 'Delivery' : 'Self-collection',
+      address: state.del ? el.address.value.trim() : '',
+      notes: el.notes.value.trim(), total: o.total,
+      screenshot: state.shot
+    };
+
+    if (!ORDERS_URL) {
+      // No order sheet connected yet: hand the order to WhatsApp
+      var text = ['Hi YFIT Meals! New order ' + id + ':']
+        .concat(o.lines.map(function (l) { return '- ' + l[0] + (l[1] ? ' (' + money(l[1]) + ')' : ''); }))
+        .concat(['Total: ' + money(o.total), '', 'Name: ' + data.name, 'Phone: ' + data.phone])
+        .concat(data.email ? ['Email: ' + data.email] : [])
+        .concat(data.address ? ['Address: ' + data.address] : [])
+        .concat(data.notes ? ['Notes: ' + data.notes] : [])
+        .concat(['', 'I will send my PayNow screenshot here.']).join('\n');
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      showDone(id, o, 'We’ve opened WhatsApp with your order. Please tap Send and attach your PayNow screenshot in the chat so we can confirm it.');
+      return;
+    }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true; btn.textContent = 'Sending your order…';
+    // text/plain keeps this a "simple" request, so Apps Script accepts it without a CORS preflight
+    fetch(ORDERS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.error || 'Order failed');
+        showDone(id, o);
+      })
+      .catch(function () {
+        errBox.innerHTML = 'Sorry, we couldn’t send your order. Please try again, or <a href="https://wa.me/' + WHATSAPP + '" target="_blank" rel="noopener">WhatsApp us</a>.';
+        errBox.hidden = false;
+      })
+      .then(function () { btn.disabled = false; btn.textContent = 'Place order'; });
+  });
+
+  document.getElementById('newOrder').addEventListener('click', function () {
+    form.reset();
+    state.A.q = state.A.add = state.B.q = state.B.add = 0;
+    state.shot = null;
+    document.getElementById('shotPreview').hidden = true;
+    document.getElementById('shotText').innerHTML = '<b>Upload payment screenshot *</b><br>Tap to choose an image of your PayNow confirmation';
+    document.querySelector('.seg [data-del="0"]').click();
+    syncs.forEach(function (f) { f(); });
+    document.getElementById('done').hidden = true;
+    form.hidden = false;
+    render();
+    document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('mbarGo').addEventListener('click', function (e) {
+    e.preventDefault();
+    (form.elements.name.value ? document.getElementById('drop') : form.elements.name).scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Countdown to the next Friday 9pm, Singapore time (UTC+8)
+  function tick() {
+    var now = Date.now();
+    var sg = new Date(now + 8 * 3600e3); // shift so UTC getters read SG time
+    var days = (5 - sg.getUTCDay() + 7) % 7;
+    var close = Date.UTC(sg.getUTCFullYear(), sg.getUTCMonth(), sg.getUTCDate() + days, 21) - 8 * 3600e3;
+    if (close <= now) close += 7 * 864e5;
+    var ms = close - now, d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60;
+    document.getElementById('countdown').textContent =
+      'Closes in ' + (d ? d + 'd ' : '') + h + 'h ' + m + 'm';
+  }
+  tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>
