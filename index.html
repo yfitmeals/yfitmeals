@@ -283,6 +283,8 @@
   .total b { font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 40px; line-height: 1; }
   .summary .btn { width: 100%; margin-top: 20px; }
   .summary .fine { font-size: 12.5px; color: var(--muted); margin: 14px 0 0; }
+  .summary .fine a, footer .bottom a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .summary .fine.consent { color: var(--text); }
 
   /* steps */
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
@@ -616,6 +618,7 @@
           <div class="total"><span>Total</span><b id="total">$0</b></div>
           <button type="submit" class="btn btn-ink" id="submitBtn">Place order</button>
           <p class="err" id="err-submit" hidden></p>
+          <p class="fine consent">By placing an order, you agree to our <a href="privacy.html">Privacy Notice</a>. We only use your details to prepare, deliver and confirm your order.</p>
           <p class="fine">Your order is confirmed once we receive your payment. Up to 4 meals of each menu per order. Meals are ready Sunday, 2pm.</p>
         </aside>
       </form>
@@ -825,6 +828,7 @@
             <li><a href="#order">Order &amp; pricing</a></li>
             <li><a href="#how">How it works</a></li>
             <li><a href="#faq">FAQ</a></li>
+            <li><a href="privacy.html">Privacy Notice</a></li>
           </ul>
         </div>
         <div>
@@ -840,7 +844,7 @@
     </div>
     <div class="bottom">
       <span>&copy; <span id="yr">2026</span> YFIT Meals. All rights reserved.</span>
-      <span>Made fresh in Singapore</span>
+      <span><a href="privacy.html">Privacy Notice</a> &middot; Made fresh in Singapore</span>
     </div>
   </div>
 </footer>
