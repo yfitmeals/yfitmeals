@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Notice | YFIT Meals</title>
+<title data-i18n="p.title">Privacy Notice | YFIT Meals</title>
 <meta name="description" content="How YFIT Meals collects, uses and protects your personal data, in line with Singapore's Personal Data Protection Act (PDPA).">
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@1,800;1,900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@1,800;1,900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>
   // Use the same light/dark choice as the main page
   try { var t = localStorage.getItem('yfit-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
+<script src="i18n.js"></script>
 <style>
   :root {
     --ink: #0b0c0a; --lime: #a8d332; --lime-dk: #739c17;
@@ -38,8 +39,14 @@
   .brand img { width: 42px; height: 42px; border-radius: 8px; }
   .brand b { font-family: "Saira", sans-serif; font-style: italic; font-weight: 900; font-size: 21px; white-space: nowrap; }
   .brand b span { color: var(--lime); }
+  .head-right { display: flex; align-items: center; gap: 14px; }
   .back { color: #fff; text-decoration: none; font-weight: 600; font-size: 14.5px; white-space: nowrap; }
   .back:hover { color: var(--lime); }
+  .lang-btn {
+    width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(255,255,255,.18); background: transparent;
+    color: #fff; font: 800 13px "Inter", sans-serif; letter-spacing: .04em; cursor: pointer; flex: none;
+  }
+  .lang-btn:hover { border-color: var(--lime); color: var(--lime); }
   .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
   main { padding: 56px 0 80px; }
   h1, h2 { font-family: "Saira", sans-serif; font-style: italic; font-weight: 800; text-transform: uppercase; line-height: 1.05; margin: 0; }
@@ -54,86 +61,91 @@
   .muted { color: var(--muted); }
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
   @media (max-width: 600px) { .wrap { padding: 0 16px; } main { padding: 40px 0 64px; } .brand b { font-size: 19px; } }
+  @media (max-width: 420px) { .brand b { display: none; } }
 </style>
 </head>
 <body>
 <header class="head">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="images/logo.png" alt="YFIT Meals logo"><b>YFIT <span>MEALS</span></b></a>
-    <a class="back" href="index.html">&larr; Back to site</a>
+    <div class="head-right">
+      <a class="back" href="index.html" data-i18n="p.back">&larr; Back to site</a>
+      <button type="button" class="lang-btn" id="langBtn" aria-label="Tukar ke Bahasa Melayu">BM</button>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <h1>Privacy Notice</h1>
-  <p class="updated">Last updated: 19 October 2026</p>
+  <h1 data-i18n="p.h1">Privacy Notice</h1>
+  <p class="updated" data-i18n="p.updated">Last updated: 21 October 2026</p>
 
   <div class="summary">
-    <p><strong>In short:</strong> we only collect what we need to prepare, deliver and confirm your meal order. We don&rsquo;t sell your data or use it for anything else without your consent, and you can ask us to see, correct or delete it at any time.</p>
+    <p data-i18n="p.summary"><strong>In short:</strong> we only collect what we need to prepare, deliver and confirm your meal order. We don&rsquo;t sell your data or use it for anything else without your consent, and you can ask us to see, correct or delete it at any time.</p>
   </div>
 
-  <p>YFIT Meals (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a home-based meal prep business in Singapore. This notice explains how we handle your personal data under Singapore&rsquo;s Personal Data Protection Act 2012 (PDPA).</p>
+  <p data-i18n="p.intro">YFIT Meals (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is a home-based meal prep business in Singapore. This notice explains how we handle your personal data under Singapore&rsquo;s Personal Data Protection Act 2012 (PDPA).</p>
+  <p class="muted" data-i18n="p.langnote">This notice is available in English and Malay. If there is any difference between them, the English version applies.</p>
 
-  <h2>What we collect</h2>
-  <p>When you place an order, we collect:</p>
+  <h2 data-i18n="p.collect.h">What we collect</h2>
+  <p data-i18n="p.collect.lead">When you place an order, we collect:</p>
   <ul>
-    <li>your name and phone number</li>
-    <li>your email address, if you choose to give it</li>
-    <li>your delivery address, if you choose delivery</li>
-    <li>any notes you add, such as allergies or special requests</li>
-    <li>your order details and your PayNow payment screenshot</li>
+    <li data-i18n="p.collect.1">your name and phone number</li>
+    <li data-i18n="p.collect.2">your email address, if you choose to give it</li>
+    <li data-i18n="p.collect.3">your delivery address, if you choose delivery</li>
+    <li data-i18n="p.collect.4">any notes you add, such as allergies or special requests</li>
+    <li data-i18n="p.collect.5">your order details and your PayNow payment screenshot</li>
   </ul>
 
-  <h2>Why we collect it</h2>
-  <p>We use your personal data only to:</p>
+  <h2 data-i18n="p.why.h">Why we collect it</h2>
+  <p data-i18n="p.why.lead">We use your personal data only to:</p>
   <ul>
-    <li>prepare and confirm your order, and check your payment</li>
-    <li>deliver your meals or arrange self-collection</li>
-    <li>contact you about your order, for example on WhatsApp when your meals are on the way</li>
-    <li>handle any questions, feedback or issues with your order</li>
+    <li data-i18n="p.why.1">prepare and confirm your order, and check your payment</li>
+    <li data-i18n="p.why.2">deliver your meals or arrange self-collection</li>
+    <li data-i18n="p.why.3">contact you about your order, for example on WhatsApp when your meals are on the way</li>
+    <li data-i18n="p.why.4">handle any questions, feedback or issues with your order</li>
   </ul>
-  <p>We won&rsquo;t send you marketing messages unless you&rsquo;ve agreed to receive them, and you can opt out any time.</p>
+  <p data-i18n="p.why.mkt">We won&rsquo;t send you marketing messages unless you&rsquo;ve agreed to receive them, and you can opt out any time.</p>
 
-  <h2>Your consent</h2>
-  <p>By placing an order, you agree that we can collect, use and disclose your personal data for the purposes above. You can withdraw your consent at any time by contacting us. If you do, we may not be able to fulfil orders that are still in progress.</p>
+  <h2 data-i18n="p.consent.h">Your consent</h2>
+  <p data-i18n="p.consent.p">By placing an order, you agree that we can collect, use and disclose your personal data for the purposes above. You can withdraw your consent at any time by contacting us. If you do, we may not be able to fulfil orders that are still in progress.</p>
 
-  <h2>Who we share it with</h2>
-  <p>We don&rsquo;t sell, rent or trade your personal data. We only share it where it&rsquo;s needed for your order:</p>
+  <h2 data-i18n="p.share.h">Who we share it with</h2>
+  <p data-i18n="p.share.lead">We don&rsquo;t sell, rent or trade your personal data. We only share it where it&rsquo;s needed for your order:</p>
   <ul>
-    <li><strong>Delivery:</strong> your name, phone number and address are given to the person delivering your order.</li>
-    <li><strong>Services we use:</strong> orders are sent to us through WhatsApp, and may be stored in Google services (such as Google Sheets and Google Drive). These providers handle data under their own privacy terms.</li>
-    <li><strong>Where required by law:</strong> we may disclose data if Singapore law requires it.</li>
+    <li data-i18n="p.share.1"><strong>Delivery:</strong> your name, phone number and address are given to the person delivering your order.</li>
+    <li data-i18n="p.share.2"><strong>Services we use:</strong> orders are sent to us through WhatsApp, and may be stored in Google services (such as Google Sheets and Google Drive). These providers handle data under their own privacy terms.</li>
+    <li data-i18n="p.share.3"><strong>Where required by law:</strong> we may disclose data if Singapore law requires it.</li>
   </ul>
 
-  <h2>How long we keep it</h2>
-  <p>We keep your order details only for as long as we need them to serve you and for our business records, which is no longer than 12 months after your last order. After that, we delete them.</p>
+  <h2 data-i18n="p.keep.h">How long we keep it</h2>
+  <p data-i18n="p.keep.p">We keep your order details only for as long as we need them to serve you and for our business records, which is no longer than 12 months after your last order. After that, we delete them.</p>
 
-  <h2>How we protect it</h2>
-  <p>Your order information is kept in accounts that only YFIT Meals can access, and we take reasonable steps to protect it from unauthorised access, use or disclosure.</p>
+  <h2 data-i18n="p.protect.h">How we protect it</h2>
+  <p data-i18n="p.protect.p">Your order information is kept in accounts that only YFIT Meals can access, and we take reasonable steps to protect it from unauthorised access, use or disclosure.</p>
 
-  <h2>Your rights</h2>
-  <p>You can ask us to:</p>
+  <h2 data-i18n="p.rights.h">Your rights</h2>
+  <p data-i18n="p.rights.lead">You can ask us to:</p>
   <ul>
-    <li>tell you what personal data we hold about you and how it has been used</li>
-    <li>correct any personal data that&rsquo;s wrong or out of date</li>
-    <li>delete your personal data, or stop using it</li>
+    <li data-i18n="p.rights.1">tell you what personal data we hold about you and how it has been used</li>
+    <li data-i18n="p.rights.2">correct any personal data that&rsquo;s wrong or out of date</li>
+    <li data-i18n="p.rights.3">delete your personal data, or stop using it</li>
   </ul>
-  <p>We&rsquo;ll respond as soon as we reasonably can, usually within 30 days.</p>
+  <p data-i18n="p.rights.time">We&rsquo;ll respond as soon as we reasonably can, usually within 30 days.</p>
 
-  <h2>This website</h2>
-  <p>This website doesn&rsquo;t use tracking or advertising cookies. It only remembers whether you chose light or dark mode, and that setting stays on your own device. Fonts are loaded from Google Fonts, which may see your device&rsquo;s IP address.</p>
+  <h2 data-i18n="p.site.h">This website</h2>
+  <p data-i18n="p.site.p">This website doesn&rsquo;t use tracking or advertising cookies. It only remembers your choice of light or dark mode and your language, and those settings stay on your own device. Fonts are loaded from Google Fonts, which may see your device&rsquo;s IP address.</p>
 
-  <h2>Contact us</h2>
-  <p>For any questions or requests about your personal data, contact our Data Protection Officer:</p>
+  <h2 data-i18n="p.contact.h">Contact us</h2>
+  <p data-i18n="p.contact.lead">For any questions or requests about your personal data, contact our Data Protection Officer:</p>
   <p><strong>Yusuf Samsudin</strong>, YFIT Meals<br>
     WhatsApp: <a href="https://wa.me/6598188807" target="_blank" rel="noopener">+65 9818 8807</a></p>
 
-  <h2>Changes to this notice</h2>
-  <p>We may update this notice from time to time. The latest version will always be on this page, with the date it was last updated.</p>
+  <h2 data-i18n="p.changes.h">Changes to this notice</h2>
+  <p data-i18n="p.changes.p">We may update this notice from time to time. The latest version will always be on this page, with the date it was last updated.</p>
 </main>
 
 <footer>
-  <div class="wrap">&copy; <span id="yr">2026</span> YFIT Meals &middot; <a href="index.html">Back to YFIT Meals</a></div>
+  <div class="wrap">&copy; <span id="yr">2026</span> YFIT Meals &middot; <a href="index.html" data-i18n="p.footer">Back to YFIT Meals</a></div>
 </footer>
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
