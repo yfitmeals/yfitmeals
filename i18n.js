@@ -37,14 +37,10 @@
     'menu.eyebrow': 'Menu minggu ini',
     'menu.h2': 'Dua hidangan. <span style="color:var(--lime-dk)">Tepat setiap gram.</span>',
     'menu.p': 'Setiap hidangan disukat dan ditimbang, jadi anda tahu dengan tepat apa yang anda makan. Tambah daging dan nasi untuk mana-mana hidangan dengan $2.',
-    'meal.A': 'Ayam Gochujang dengan Nasi',
-    'meal.B': 'Stik Daging Tumis dengan Nasi',
-    'meal.kcal': 'kcal setiap hidangan',
-    'mac.p': 'Protein',
-    'mac.c': 'Karbohidrat',
-    'mac.f': 'Lemak',
     'menu.note': 'Menu bertukar setiap minggu. Ikuti kami supaya anda tidak terlepas hidangan kegemaran.',
 
+    'closed.h': 'Tempahan untuk minggu ini telah ditutup',
+    'closed.p': 'Tempahan untuk minggu hadapan dibuka pada hari Ahad, 2 petang. Anda masih boleh melihat menu, atau WhatsApp kami jika ada soalan.',
     'order.eyebrow': 'Tempah sekarang',
     'order.h2': 'Buat tempahan anda',
     'order.p': 'Pilih hidangan, isi butiran anda dan bayar melalui PayNow. Hanya ambil masa kira-kira seminit. Tempahan ditutup Jumaat, 9 malam.',
@@ -52,10 +48,6 @@
     'fs.2': 'Butiran anda',
     'fs.3': 'Penghantaran atau ambil sendiri',
     'fs.4': 'Pembayaran',
-    'b.A': 'Menu A &middot; Ayam Gochujang',
-    'b.A.d': '$8 setiap hidangan &middot; 523 kcal &middot; 43.9g protein',
-    'b.B': 'Menu B &middot; Stik Daging Tumis',
-    'b.B.d': '$13 setiap hidangan &middot; 575 kcal &middot; 46.7g protein',
     'addon': 'Tambahan daging &amp; nasi <small>+$2 / hidangan</small>',
     'aria.remA': 'Kurangkan satu hidangan Menu A',
     'aria.addA': 'Tambah satu hidangan Menu A',
@@ -137,7 +129,6 @@
     'faq.1.q': 'Bilakah tarikh akhir tempahan?',
     'faq.1.a': 'Tempahan ditutup setiap Jumaat pada 9 malam. Makanan siap untuk dihantar atau diambil sendiri pada hari Ahad berikutnya, 2 petang.',
     'faq.2.q': 'Berapakah harganya?',
-    'faq.2.a': 'Menu A ialah $8 setiap hidangan. Menu B ialah $13 setiap hidangan, atau $51 untuk 4 hidangan. Tambahan daging dan nasi ialah $2 setiap hidangan, dan penghantaran ialah $15. Ambil sendiri adalah percuma.',
     'faq.3.q': 'Apakah jejak makro percuma?',
     'faq.3.a': 'Setiap pembelian disertakan dengan kalori, protein, karbohidrat dan lemak bagi hidangan anda, dikira hingga ke gram. Mudah dicatat, mudah kekal di landasan.',
     'faq.4.q': 'Bagaimana cara membayar?',
@@ -217,7 +208,14 @@
   // Text the page scripts build on the fly
   var DYN = {
     en: {
-      menuA: 'Menu A · Gochujang Chicken', menuB: 'Menu B · Beef Steak Stir Fry',
+      perMeal: 'per meal', kcalPer: 'kcal per meal', protein: 'Protein', carbs: 'Carbs', fats: 'Fats',
+      faqPrice: function (parts, addon, delivery) {
+        return parts.join(' ') + ' Extra meat and rice is $' + addon + ' per meal, and delivery is a flat $' + delivery + '. Self-collection is free.';
+      },
+      faqMenu: function (k, one, four) {
+        return 'Menu ' + k + ' is $' + one + ' per meal' + (four ? ', or $' + four + ' for 4 meals.' : '.');
+      },
+      closedShort: 'Closed · reopens Sun, 2pm', closedBtn: 'Orders closed',
       addonLine: function (n, k) { return 'Extra meat & rice × ' + n + ' (Menu ' + k + ')'; },
       delivery: 'Delivery', collect: 'Self-collection', free: 'Free', total: 'Total',
       empty: 'Add a meal to get started.',
@@ -237,7 +235,14 @@
       langBtn: 'BM', langAria: 'Tukar ke Bahasa Melayu'
     },
     ms: {
-      menuA: 'Menu A · Ayam Gochujang', menuB: 'Menu B · Stik Daging Tumis',
+      perMeal: 'setiap hidangan', kcalPer: 'kcal setiap hidangan', protein: 'Protein', carbs: 'Karbohidrat', fats: 'Lemak',
+      faqPrice: function (parts, addon, delivery) {
+        return parts.join(' ') + ' Tambahan daging dan nasi ialah $' + addon + ' setiap hidangan, dan penghantaran ialah $' + delivery + '. Ambil sendiri adalah percuma.';
+      },
+      faqMenu: function (k, one, four) {
+        return 'Menu ' + k + ' ialah $' + one + ' setiap hidangan' + (four ? ', atau $' + four + ' untuk 4 hidangan.' : '.');
+      },
+      closedShort: 'Ditutup · dibuka semula Ahad, 2 petang', closedBtn: 'Tempahan ditutup',
       addonLine: function (n, k) { return 'Tambahan daging & nasi × ' + n + ' (Menu ' + k + ')'; },
       delivery: 'Penghantaran', collect: 'Ambil sendiri', free: 'Percuma', total: 'Jumlah',
       empty: 'Tambah hidangan untuk mula.',

@@ -4,9 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="title">YFIT Meals | High-Protein Meal Prep, Singapore</title>
+<script src="menu.js"></script>
 <script src="i18n.js"></script>
 <meta name="description" content="Fresh, high-protein meal prep in Singapore. Two new rotating menus every week, with free calorie and macro tracking. Order by Friday 9pm, ready Sunday 2pm.">
 <link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<link rel="canonical" href="https://yfitmeals.github.io/yfitmeals/">
+<meta name="theme-color" content="#0b0c0a">
+<!-- Link preview when the site is shared on WhatsApp, Instagram, Facebook, Telegram, etc. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YFIT Meals">
+<meta property="og:url" content="https://yfitmeals.github.io/yfitmeals/">
+<meta property="og:title" content="YFIT Meals | High-Protein Meal Prep, Singapore">
+<meta property="og:description" content="Fresh, high-protein meals with macros tracked to the gram. Two new menus every week. Order by Friday 9pm, ready Sunday 2pm.">
+<meta property="og:image" content="https://yfitmeals.github.io/yfitmeals/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="YFIT Meals logo next to seared beef steak over kimchi fried rice">
+<meta property="og:locale" content="en_SG">
+<meta property="og:locale:alternate" content="ms_SG">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,600;0,800;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -416,6 +433,18 @@
     .mbar .btn { padding: 11px 16px; font-size: 14px; }
     footer { padding-bottom: 96px; }
   }
+  /* orders closed (Fri 9pm – Sun 2pm) */
+  .closed-note {
+    display: flex; gap: 14px; align-items: flex-start; margin-bottom: 24px;
+    background: rgba(168,211,50,.1); border: 1px solid rgba(168,211,50,.45); border-radius: var(--radius); padding: 18px 20px;
+  }
+  .closed-note[hidden] { display: none; }
+  .closed-note svg { width: 26px; height: 26px; color: var(--lime); flex: none; margin-top: 1px; }
+  .closed-note b { display: block; color: #fff; font-size: 16px; }
+  .closed-note span { color: #c9cdd2; font-size: 14.5px; }
+  .is-closed #submitBtn { opacity: .55; cursor: not-allowed; }
+  .is-closed #countdown { color: #ffb38a; }
+
   /* language switch */
   .lang-btn { font: 800 13px "Inter", sans-serif; letter-spacing: .04em; }
   .fs-title i { font-style: inherit; }
@@ -472,8 +501,8 @@
       </div>
       <div class="hero-pic">
         <div class="main"><img src="images/steak-kimchi-rice.jpg" alt="Seared beef steak sliced over kimchi fried rice in meal prep containers"></div>
-        <div class="macro-chip two"><b>46.7g</b><span data-i18n="chip.protein">protein per meal</span></div>
-        <div class="macro-chip one"><b>575</b><span data-i18n="chip.kcal">kcal &middot; tracked to the gram</span></div>
+        <div class="macro-chip two"><b id="chipProtein"></b><span data-i18n="chip.protein">protein per meal</span></div>
+        <div class="macro-chip one"><b id="chipKcal"></b><span data-i18n="chip.kcal">kcal &middot; tracked to the gram</span></div>
       </div>
     </div>
   </section>
@@ -511,41 +540,7 @@
         <p data-i18n="menu.p">Each meal is portioned and weighed, so you know exactly what you&rsquo;re eating. Add extra meat and rice to any meal for $2.</p>
       </div>
 
-      <div class="menu-grid">
-        <article class="meal">
-          <div class="ph">
-            <img src="images/chicken-rice.jpg" alt="Glazed grilled chicken thigh with white rice and long beans">
-            <span class="tag">Menu <i>A</i></span>
-            <span class="price-tag">$8</span>
-          </div>
-          <div class="body">
-            <h3 data-i18n="meal.A">Gochujang Chicken with Rice</h3>
-            <div class="kcal"><b>523</b> <span data-i18n="meal.kcal">kcal per meal</span></div>
-            <div class="macros">
-              <div class="mrow p"><span data-i18n="mac.p">Protein</span><div class="bar"><i style="width:63%"></i></div><b>43.9g</b></div>
-              <div class="mrow"><span data-i18n="mac.c">Carbs</span><div class="bar"><i style="width:89%"></i></div><b>62g</b></div>
-              <div class="mrow f"><span data-i18n="mac.f">Fats</span><div class="bar"><i style="width:12%"></i></div><b>8.6g</b></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="meal">
-          <div class="ph">
-            <img src="images/steak-kimchi-rice.jpg" alt="Sliced seared beef steak over kimchi fried rice">
-            <span class="tag">Menu <i>B</i></span>
-            <span class="price-tag">$13</span>
-          </div>
-          <div class="body">
-            <h3 data-i18n="meal.B">Beef Steak Stir Fry with Rice</h3>
-            <div class="kcal"><b>575</b> <span data-i18n="meal.kcal">kcal per meal</span></div>
-            <div class="macros">
-              <div class="mrow p"><span data-i18n="mac.p">Protein</span><div class="bar"><i style="width:67%"></i></div><b>46.7g</b></div>
-              <div class="mrow"><span data-i18n="mac.c">Carbs</span><div class="bar"><i style="width:83%"></i></div><b>58.4g</b></div>
-              <div class="mrow f"><span data-i18n="mac.f">Fats</span><div class="bar"><i style="width:21%"></i></div><b>14.9g</b></div>
-            </div>
-          </div>
-        </article>
-      </div>
+      <div class="menu-grid" id="menuGrid"><!-- filled from menu.js --></div>
       <p class="menu-note" data-i18n="menu.note">Menus change every week. Follow along so you don&rsquo;t miss your favourites.</p>
     </div>
   </section>
@@ -561,14 +556,23 @@
         <p data-i18n="order.p">Choose your meals, fill in your details and pay by PayNow. It takes about a minute. Orders close Friday, 9pm.</p>
       </div>
 
+      <!-- Shown from Friday 9pm until Sunday 2pm (Singapore time) -->
+      <div class="closed-note" id="closedNote" role="status" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div>
+          <b data-i18n="closed.h">Orders for this week are closed</b>
+          <span data-i18n="closed.p">Ordering for next week opens on Sunday at 2pm. You can still look through the menu, or WhatsApp us if you have a question.</span>
+        </div>
+      </div>
+
       <form class="builder" id="orderForm" novalidate>
         <div class="b-items">
           <div class="fs-title"><span>1</span><i data-i18n="fs.1">Choose your meals</i></div>
           <div class="b-item" data-key="A">
-            <img src="images/chicken-rice.jpg" alt="">
+            <img class="b-photo" alt="">
             <div>
-              <h3 data-i18n="b.A">Menu A &middot; Gochujang Chicken</h3>
-              <p data-i18n="b.A.d">$8 per meal &middot; 523 kcal &middot; 43.9g protein</p>
+              <h3 class="b-name"></h3>
+              <p class="b-desc"></p>
               <div class="addon"><span data-i18n="addon">Extra meat &amp; rice <small>+$2 / meal</small></span>
                 <span class="stepper sm" data-addon><button type="button" aria-label="Remove an add-on" data-i18n-aria="aria.remAddon">&minus;</button><output>0</output><button type="button" aria-label="Add an add-on" data-i18n-aria="aria.addAddon">+</button></span>
               </div>
@@ -576,10 +580,10 @@
             <div class="stepper" data-meals><button type="button" aria-label="Remove a Menu A meal" data-i18n-aria="aria.remA">&minus;</button><output>0</output><button type="button" aria-label="Add a Menu A meal" data-i18n-aria="aria.addA">+</button></div>
           </div>
           <div class="b-item" data-key="B">
-            <img src="images/steak-kimchi-rice.jpg" alt="">
+            <img class="b-photo" alt="">
             <div>
-              <h3 data-i18n="b.B">Menu B &middot; Beef Steak Stir Fry</h3>
-              <p data-i18n="b.B.d">$13 per meal &middot; 575 kcal &middot; 46.7g protein</p>
+              <h3 class="b-name"></h3>
+              <p class="b-desc"></p>
               <div class="addon"><span data-i18n="addon">Extra meat &amp; rice <small>+$2 / meal</small></span>
                 <span class="stepper sm" data-addon><button type="button" aria-label="Remove an add-on" data-i18n-aria="aria.remAddon">&minus;</button><output>0</output><button type="button" aria-label="Add an add-on" data-i18n-aria="aria.addAddon">+</button></span>
               </div>
@@ -781,7 +785,7 @@
           </details>
           <details>
             <summary data-i18n="faq.2.q">How much does it cost?</summary>
-            <p data-i18n="faq.2.a">Menu A is $8 per meal. Menu B is $13 per meal, or $51 for 4 meals. Extra meat and rice is $2 per meal, and delivery is a flat $15. Self-collection is free.</p>
+            <p id="faqPrice"></p>
           </details>
           <details>
             <summary data-i18n="faq.3.q">What is the free macro tracking?</summary>
@@ -892,12 +896,47 @@
   if (darkQuery.addEventListener) darkQuery.addEventListener('change', syncTheme);
   syncTheme();
 
-  // Prices match the old Google Form (Menu B has a 4-meal bundle price)
+  // This week's dishes and prices come from menu.js
+  var WEEK = window.YFIT_MENU, lang = window.YFIT_I18N.lang;
   var MENU = {
-    A: { name: 'menuA', prices: [0, 8, 16, 24, 32] },
-    B: { name: 'menuB', prices: [0, 13, 26, 39, 51] }
+    A: { prices: [0].concat(WEEK.A.prices) },
+    B: { prices: [0].concat(WEEK.B.prices) }
   };
   var ADDON = 2, MAX = 4, DELIVERY = 15;
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function grams(n) { return (Math.round(n * 10) / 10) + 'g'; }
+  function bar(g) { return Math.min(100, Math.round(g / 70 * 100)) + '%'; } // 70g fills the bar
+
+  // Builds the menu cards, order form items, hero stats and price FAQ from menu.js
+  function renderMenu() {
+    var L = lang(), html = '', faq = [];
+    ['A', 'B'].forEach(function (k) {
+      var m = WEEK[k], p1 = m.prices[0], p4 = m.prices[3];
+      html += '<article class="meal"><div class="ph">' +
+        '<img src="' + esc(m.photo) + '" alt="' + esc(m.alt) + '">' +
+        '<span class="tag">Menu <i>' + k + '</i></span><span class="price-tag">$' + p1 + '</span></div>' +
+        '<div class="body"><h3>' + esc(m.name[L]) + '</h3>' +
+        '<div class="kcal"><b>' + m.kcal + '</b> ' + t('kcalPer') + '</div><div class="macros">' +
+        [['p', t('protein'), m.protein], ['', t('carbs'), m.carbs], ['f', t('fats'), m.fats]].map(function (r) {
+          return '<div class="mrow ' + r[0] + '"><span>' + r[1] + '</span><div class="bar"><i style="width:' + bar(r[2]) + '"></i></div><b>' + grams(r[2]) + '</b></div>';
+        }).join('') + '</div></div></article>';
+
+      var row = document.querySelector('.b-item[data-key="' + k + '"]');
+      row.querySelector('.b-photo').src = m.photo;
+      row.querySelector('.b-name').textContent = 'Menu ' + k + ' · ' + m.short[L];
+      row.querySelector('.b-desc').textContent = '$' + p1 + ' ' + t('perMeal') + ' · ' + m.kcal + ' kcal · ' + grams(m.protein) + ' protein';
+      // Mention the 4-meal price only when it's a deal
+      faq.push(t('faqMenu', k, p1, p4 < p1 * 4 ? p4 : 0));
+    });
+    document.getElementById('menuGrid').innerHTML = html;
+    document.getElementById('faqPrice').textContent = t('faqPrice', faq, ADDON, DELIVERY);
+    // Hero stats show the highest-protein meal this week
+    var top = WEEK.A.protein >= WEEK.B.protein ? WEEK.A : WEEK.B;
+    document.getElementById('chipProtein').textContent = grams(top.protein);
+    document.getElementById('chipKcal').textContent = top.kcal;
+  }
+  renderMenu();
   var state = { A: { q: 0, add: 0 }, B: { q: 0, add: 0 }, del: 0, shot: null, shotName: '', done: null };
   var form = document.getElementById('orderForm');
 
@@ -915,7 +954,7 @@
       var s = state[k];
       if (!s.q) return;
       meals += s.q;
-      lines.push([s.q + ' × ' + t(MENU[k].name), MENU[k].prices[s.q]]);
+      lines.push([s.q + ' × Menu ' + k + ' · ' + WEEK[k].short[lang()], MENU[k].prices[s.q]]);
       total += MENU[k].prices[s.q];
       if (s.add) { lines.push([t('addonLine', s.add, k), ADDON * s.add]); total += ADDON * s.add; }
     });
@@ -1074,6 +1113,10 @@
     e.preventDefault();
     var errBox = document.getElementById('err-submit');
     errBox.hidden = true;
+    if (root.classList.contains('is-closed')) {
+      document.getElementById('closedNote').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     if (!validate()) return;
 
     var el = form.elements, o = orderLines(), id = orderId();
@@ -1136,10 +1179,24 @@
     (form.elements.name.value ? document.getElementById('drop') : form.elements.name).scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
-  // Countdown to the next Friday 9pm, Singapore time (UTC+8)
+  // Orders are closed from Friday 9pm until Sunday 2pm, Singapore time (UTC+8).
+  // Add ?closed=1 to the address to preview the closed state any time.
+  var FORCE_CLOSED = /[?&]closed=1\b/.test(location.search);
+  function isClosed(sg) {
+    var day = sg.getUTCDay(), hr = sg.getUTCHours();
+    return FORCE_CLOSED || (day === 5 && hr >= 21) || day === 6 || (day === 0 && hr < 14);
+  }
+
+  // Countdown to the next Friday 9pm, or the closed notice
   function tick() {
     var now = Date.now();
     var sg = new Date(now + 8 * 3600e3); // shift so UTC getters read SG time
+    var closed = isClosed(sg);
+    root.classList.toggle('is-closed', closed);
+    document.getElementById('closedNote').hidden = !closed;
+    var btn = document.getElementById('submitBtn');
+    if (!btn.disabled || closed) btn.textContent = closed ? t('closedBtn') : t('placeOrder');
+    if (closed) { document.getElementById('countdown').textContent = t('closedShort'); return; }
     var days = (5 - sg.getUTCDay() + 7) % 7;
     var close = Date.UTC(sg.getUTCFullYear(), sg.getUTCMonth(), sg.getUTCDate() + days, 21) - 8 * 3600e3;
     if (close <= now) close += 7 * 864e5;
@@ -1150,7 +1207,7 @@
 
   // Redraw everything the script writes whenever the language is switched (and once on load)
   document.addEventListener('yfit:lang', function () {
-    render(); renderDone(); showShotText(); syncTheme(); tick();
+    renderMenu(); render(); renderDone(); showShotText(); syncTheme(); tick();
     copyBtn.textContent = t('copy');
   });
 </script>
